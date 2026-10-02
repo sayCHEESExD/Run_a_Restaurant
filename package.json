@@ -1,0 +1,43 @@
+{
+  "name": "run-a-restaurant",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Run a Restaurant - browser multiplayer restaurant tycoon (Three.js + Colyseus) for Bloxity",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11.0"
+  },
+  "workspaces": [
+    "shared",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "build:shared": "npm run build --workspace @restaurant/shared",
+    "dev": "npm run build:shared && concurrently -n server,client -c magenta,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev --workspace @restaurant/server",
+    "dev:client": "npm run dev --workspace @restaurant/client",
+    "build": "npm run build:shared && npm run build --workspace @restaurant/server && npm run build --workspace @restaurant/client",
+    "build:client": "npm run build:shared && npm run build --workspace @restaurant/client",
+    "build:server": "npm run build:shared && npm run build --workspace @restaurant/server",
+    "typecheck": "npm run build:shared && npm run typecheck --workspaces --if-present",
+    "start": "npm run start --workspace @restaurant/server",
+    "verify:assets": "node scripts/verify-assets.mjs",
+    "size:client": "node scripts/build-size.mjs",
+    "verify:progression": "npm run build:shared && node scripts/verify-progression.mjs",
+    "verify:layout": "npm run build:shared && node scripts/verify-layout.mjs",
+    "verify": "npm run verify:progression && npm run verify:layout && npm run verify:assets",
+    "verify:capacity": "node scripts/verify-capacity.mjs",
+    "verify:persistence": "npm run build:server && node scripts/verify-persistence.mjs",
+    "verify:loop": "node scripts/verify-loop.mjs",
+    "verify:staff": "node scripts/verify-staff.mjs",
+    "verify:stats": "npm run build:server && node scripts/verify-stats.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@colyseus/core": "0.16.24"
+  }
+}
