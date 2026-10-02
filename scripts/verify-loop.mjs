@@ -162,7 +162,7 @@ await act(a, 'place', { kind: 1, x: -14.5, z: 16, rot: 2 });
 await waitFor(() => a.self.tutorial === TUTORIAL.done, 'tutorial: done');
 check(a.self.cash === 150, `the tutorial finishes with a $150 bonus (${a.self.cash})`);
 
-await act(a, 'place', { kind: 2, x: -25.5, z: 11.5, rot: 0 });
+await act(a, 'place', { kind: 2, x: -27.5, z: 14, rot: 0 });
 check(a.notices.some((t) => t.includes('overlaps')), 'an overlapping placement is refused');
 
 // -------------------------------------------------------------- visitors

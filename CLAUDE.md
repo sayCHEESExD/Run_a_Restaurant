@@ -63,7 +63,7 @@ scratchpad and run it.
   spawn (0,-48) and six leaderboards at x = +-60. Ring road 166..178. Plots: front edge 186 from the middle,
   4 north / 4 east / 3 south (market green at x -45) / 4 west, each 80 x 64 plot-local (x -40..40, z 0..64).
 - In a plot: the restaurant's door is fixed at x = -18 in the front wall (z 6); tiers grow it about that door
-  (22x16 -> 40x28). Farm x 8..38 z 4..30, ranch x 8..38 z 36..62, fenced, gates on the x = 8 side. Customers come
+  (30x22 -> 40x34). Farm x 8..38 z 4..30, ranch x 8..38 z 36..62, fenced, gates on the x = 8 side. Customers come
   from the street at (-18,-8) and queue at `QUEUE_SPOTS`.
 - Pet Merchant stall at (-38,-44) (`PET_MERCHANT`, NPC behind the counter, buy within 12). Fishing Pier runs
   south from the ring road at x = -60 out to z -352 (`PIER`, a `'path'` ground strip); casting works from

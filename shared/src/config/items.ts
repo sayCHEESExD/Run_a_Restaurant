@@ -212,21 +212,21 @@ export const snapCentre = (value: number): number => Math.round(value / SNAP) * 
 /**
  * THE STARTER RESTAURANT: the kitchen along the back wall (stove, fridge,
  * sink, order stand, counters, the register by the door) and two tables with
- * chairs. Positions are plot-local, for the Cozy Diner (interior x -29..-7,
- * z 6..22). The tutorial's own table and chairs come in the backpack.
+ * chairs. Positions are plot-local, for the Cozy Diner (interior x -33..-3,
+ * z 6..28). The tutorial's own table and chairs come in the backpack.
  */
 export const STARTER_LAYOUT: readonly { kind: number; x: number; z: number; rot: number }[] = [
-  { kind: 20, x: -26.5, z: 21, rot: 0 },
-  { kind: 25, x: -23, z: 21, rot: 0 },
-  { kind: 14, x: -21, z: 21, rot: 0 },
-  { kind: 32, x: -17, z: 21, rot: 0 },
-  { kind: 14, x: -13, z: 21, rot: 0 },
-  { kind: 29, x: -9.5, z: 21, rot: 0 },
-  { kind: 34, x: -10, z: 8, rot: 1 },
-  { kind: 3, x: -25.5, z: 11.5, rot: 0 },
-  { kind: 1, x: -28, z: 11.5, rot: 3 },
-  { kind: 1, x: -23, z: 11.5, rot: 1 },
-  { kind: 40, x: -28.5, z: 6.5, rot: 0 },
+  { kind: 20, x: -26.5, z: 27, rot: 0 },
+  { kind: 25, x: -23, z: 27, rot: 0 },
+  { kind: 14, x: -21, z: 27, rot: 0 },
+  { kind: 32, x: -17, z: 27, rot: 0 },
+  { kind: 14, x: -13, z: 27, rot: 0 },
+  { kind: 29, x: -9.5, z: 27, rot: 0 },
+  { kind: 34, x: -8, z: 8, rot: 1 },
+  { kind: 3, x: -27.5, z: 14, rot: 0 },
+  { kind: 1, x: -30, z: 14, rot: 3 },
+  { kind: 1, x: -25, z: 14, rot: 1 },
+  { kind: 40, x: -32.5, z: 6.5, rot: 0 },
 ];
 
 /** What a brand-new owner finds in their Items: the tutorial's table and two chairs. */

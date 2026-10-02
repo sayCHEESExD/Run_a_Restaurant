@@ -282,10 +282,11 @@ export const buildShell = (tier: number, floorStyle: number, wallStyle: number):
     block(ab, 0.3, 0.5, 0.3, 0x2a2a2e, { x, y: 4.6, z: r.minZ - t - 0.25 });
     ball(ab, 0.22, 0xfff0c8, { x, y: 4.3, z: r.minZ - t - 0.35 }, 'glow', 0);
   }
-  // Door frame.
-  block(ab, 0.3, 5.4, t + 0.3, 0x7a4a2a, { x: DOOR.x - DOOR.half - 0.15, y: 2.7, z: r.minZ - t / 2 });
-  block(ab, 0.3, 5.4, t + 0.3, 0x7a4a2a, { x: DOOR.x + DOOR.half + 0.15, y: 2.7, z: r.minZ - t / 2 });
-  block(ab, DOOR.half * 2 + 0.6, 0.3, t + 0.3, 0x7a4a2a, { x: DOOR.x, y: 5.4, z: r.minZ - t / 2 });
+  // Door frame. Each post reaches 0.1 INTO the wall, so the wall's cut end (at DOOR.half)
+  // is buried inside the post rather than sharing its plane - a shared plane z-fights.
+  block(ab, 0.4, 5.6, t + 0.3, 0x7a4a2a, { x: DOOR.x - DOOR.half + 0.1, y: 2.8, z: r.minZ - t / 2 });
+  block(ab, 0.4, 5.6, t + 0.3, 0x7a4a2a, { x: DOOR.x + DOOR.half - 0.1, y: 2.8, z: r.minZ - t / 2 });
+  block(ab, DOOR.half * 2 + 0.6, 0.4, t + 0.3, 0x7a4a2a, { x: DOOR.x, y: 5.4, z: r.minZ - t / 2 });
   // The awning belongs to the front wall: it drops away with it.
   walls.front.full.add(ab.build('awning'));
 

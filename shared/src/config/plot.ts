@@ -27,10 +27,10 @@ export interface BuildingTier {
 }
 
 export const TIERS: readonly BuildingTier[] = [
-  { name: 'Cozy Diner', w: 22, d: 16, price: 0, rank: 0, staff: 3 },
-  { name: 'Bistro', w: 28, d: 20, price: 2_500, rank: 2, staff: 6 },
-  { name: 'Restaurant', w: 34, d: 24, price: 30_000, rank: 5, staff: 9 },
-  { name: 'Grand Restaurant', w: 40, d: 28, price: 350_000, rank: 8, staff: 13 },
+  { name: 'Cozy Diner', w: 30, d: 22, price: 0, rank: 0, staff: 3 },
+  { name: 'Bistro', w: 34, d: 26, price: 2_500, rank: 2, staff: 6 },
+  { name: 'Restaurant', w: 38, d: 30, price: 30_000, rank: 5, staff: 9 },
+  { name: 'Grand Restaurant', w: 40, d: 34, price: 350_000, rank: 8, staff: 13 },
 ];
 
 export const MAX_TIER = TIERS.length - 1;
