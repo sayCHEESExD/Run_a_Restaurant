@@ -38,7 +38,11 @@ concurrency:
   # the same channel and the winner would be whichever finished last, not
   # whichever was newer.
   group: bloxity-deploy-${{ github.ref }}
-  cancel-in-progress: true
+  # QUEUED, never cancelled: cancelling a run mid-deploy could roll the new
+  # server without its client (or kill an upload half-sent). A newer push waits
+  # for the running deploy to finish; GitHub still drops older PENDING runs, so
+  # only the latest queued commit deploys next.
+  cancel-in-progress: false
 
 env:
   # THE GAME ID REGISTERED ON BLOXITY. Every route, every hostname and the
